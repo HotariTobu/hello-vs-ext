@@ -2,6 +2,16 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+import setKeysForSync from './set-keys-for-sync';
+import displayNotifications from './display-notifications';
+import quickPick from './quick-pick';
+import inputBox from './input-box';
+import filePicker from './file-picker';
+import outputChannel from './output-channel';
+import progress from './progress';
+import getConfig from './get-config';
+import execCmds from './exec-cmds';
+
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -28,6 +38,17 @@ export function activate(context: vscode.ExtensionContext) {
 		])
 		console.log('selected item:', item)
 	}));
+
+	setKeysForSync(context)
+	displayNotifications(context)
+	inputBox(context)
+	quickPick(context)
+	filePicker(context)
+	outputChannel(context)
+	progress(context)
+
+	getConfig(context)
+	execCmds(context)
 }
 
 // This method is called when your extension is deactivated

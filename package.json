@@ -3,7 +3,7 @@
   "name": "hello-vs-ext",
   "displayName": "Hello-VS-Ext",
   "description": "My first vscode extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.81.0"
   },
@@ -16,13 +16,277 @@
     "commands": [
       {
         "command": "hello-vs-ext.helloWorld",
-        "title": "Hello World"
+        "title": "Hello World",
+        "category": "Hello"
       },
       {
         "command": "hello-vs-ext.otherCommand",
         "title": "Other Command"
+      },
+      {
+        "command": "hello-vs-ext.setKeysForSync",
+        "title": "Check Version"
+      },
+      {
+        "command": "hello-vs-ext.info",
+        "title": "Notify Info"
+      },
+      {
+        "command": "hello-vs-ext.warn",
+        "title": "Notify Warn"
+      },
+      {
+        "command": "hello-vs-ext.error",
+        "title": "Notify Error"
+      },
+      {
+        "command": "hello-vs-ext.input",
+        "title": "Input something..."
+      },
+      {
+        "command": "hello-vs-ext.pick",
+        "title": "Pick!"
+      },
+      {
+        "command": "hello-vs-ext.pickFile",
+        "title": "Open some file"
+      },
+      {
+        "command": "hello-vs-ext.output",
+        "title": "Create and kill Output Channel!"
+      },
+      {
+        "command": "hello-vs-ext.progress",
+        "title": "Progress..."
+      },
+
+      {
+        "command": "hello-vs-ext.getConfig",
+        "title": "Toggle boolean property"
+      },
+      {
+        "command": "hello-vs-ext.setConfig",
+        "title": "Update boolean property"
+      },
+      {
+        "command": "hello-vs-ext.execBuiltIn",
+        "title": "Execute built-in command"
+      },
+      {
+        "command": "hello-vs-ext.execThirdParty",
+        "title": "Execute third-party command"
+      },
+      {
+        "command": "hello-vs-ext.execSecondParty",
+        "title": "Execute my command"
+      },
+      {
+        "command": "hello-vs-ext.echo",
+        "title": "Echo arguments"
       }
-    ]
+    ],
+    "configuration": [
+      {
+        "title": "Hello-VS-Ext",
+        "properties": {
+          "hello-vs-ext.someProperty": {
+            "$comment": "comment",
+            "$id": "id",
+            "$ref": "ref",
+            "$schema": "scheme",
+            "deprecationMessage": "deprecation message",
+            "editPresentation": "multilineText",
+            "enumDescriptions": [
+              "enum 1",
+              "enum 2",
+              "enum 3"
+            ],
+            "enumItemLabels": [
+              "label 1",
+              "label 2",
+              "label 3"
+            ],
+            "ignoreSync": false,
+            "markdownDeprecationMessage": "`markdown` deprecation message",
+            "markdownDescription": "`markdown` description",
+            "markdownEnumDescriptions": [
+              "`enum` 1",
+              "`enum` 2",
+              "`enum` 3"
+            ],
+            "order": 0,
+            "scope": "machine-overridable",
+            "type": "enum",
+            "default": "enum 2",
+            "description": "description"
+          },
+          "hello-vs-ext.otherProperty": {
+            "additionalItems": true,
+            "additionalProperties": true,
+            "allOf": [
+              "scheme 1",
+              "scheme 2",
+              "scheme 3"
+            ],
+            "editPresentation": "singlelineText",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null,
+            "description": "other description"
+          },
+          "hello-vs-ext.anotherProperty": {
+            "anyOf": [
+              "scheme 1",
+              "scheme 2",
+              "scheme 3"
+            ]
+          }
+        }
+      },
+      {
+        "title": "New Section?",
+        "properties": {
+          "hello-vs-ext.additionalProperty": {
+            "const": "keyword",
+            "contains": true,
+            "contentEncoding": "content encoding",
+            "contentMediaType": "content media type",
+            "definitions": {
+              "definition 1": "ref 1",
+              "definition 2": "ref 2",
+              "definition 3": "ref 3"
+            }
+          },
+          "hello-vs-ext.extraProperty": {
+            "dependencies": {
+              "hello-vs-ext.booleanProperty": false
+            },
+            "examples": [
+              {
+                "title": "sample 1",
+                "data": null
+              },
+              {
+                "title": "sample 2",
+                "data": 0
+              },
+              {
+                "title": "sample 3",
+                "data": false
+              }
+            ],
+            "exclusiveMaximum": 100,
+            "exclusiveMinimum": -100,
+            "format": "YYYY-MM-DD",
+            "if": true,
+            "then": true,
+            "else": true,
+            "items": true,
+            "not": true,
+            "oneOf": [
+              "scheme 1",
+              "scheme 2",
+              "scheme 3"
+            ]
+          },
+          "hello-vs-ext.moreProperty": {
+            "pattern": "\\d+m",
+            "patternProperties": {
+              "pattern 1": "\\w+0",
+              "pattern 2": ".*/",
+              "pattern 3": "^d"
+            }
+          },
+          "hello-vs-ext.addedProperty": {
+            "readOnly": true,
+            "title": "Title",
+            "uniqueItems": true
+          }
+        }
+      },
+      {
+        "order": 1,
+        "title": "New Section!",
+        "properties": {
+          "hello-vs-ext.arrayProperty": {
+            "description": "array property",
+            "type": "array",
+            "default": [
+              "item 1",
+              "item 2",
+              "item 3"
+            ],
+            "minItems": 1,
+            "maxItems": 5
+          },
+          "hello-vs-ext.booleanProperty": {
+            "description": "boolean property",
+            "type": "boolean",
+            "default": true
+          },
+          "hello-vs-ext.integerProperty": {
+            "description": "integer property",
+            "type": "integer",
+            "default": 334,
+            "minimum": -80,
+            "maximum": 512
+          },
+          "hello-vs-ext.nullProperty": {
+            "description": "null property",
+            "type": "null",
+            "default": null
+          },
+          "hello-vs-ext.numberProperty": {
+            "description": "number property",
+            "type": "number",
+            "default": 3.14
+          },
+          "hello-vs-ext.objectProperty": {
+            "description": "object property",
+            "type": "object",
+            "default": {
+              "name": "John",
+              "age": 25
+            },
+            "minProperties": 1,
+            "maxProperties": 3,
+            "required": [
+              "name",
+              "age"
+            ]
+          },
+          "hello-vs-ext.stringProperty": {
+            "description": "string property",
+            "type": "string",
+            "default": "text here...",
+            "minLength": 3,
+            "maxLength": 10
+          }
+        }
+      }
+    ],
+
+    "keybindings": [
+      {
+        "command": "hello-vs-ext.helloWorld",
+        "key": "ctrl+shift+q",
+        "mac": "cmd+shift+q",
+        "when": "editorTextFocus"
+      }
+    ],
+
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == markdown",
+          "command": "markdown.showPreview",
+          "alt": "markdown.showPreviewToSide",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
