@@ -11,6 +11,7 @@ import outputChannel from './output-channel';
 import progress from './progress';
 import getConfig from './get-config';
 import execCmds from './exec-cmds';
+import vscodeScheme from './vscode-scheme';
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -49,6 +50,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	getConfig(context)
 	execCmds(context)
+
+	vscodeScheme(context)
 }
 
 // This method is called when your extension is deactivated

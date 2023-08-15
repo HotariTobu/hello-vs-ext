@@ -83,6 +83,11 @@
       {
         "command": "hello-vs-ext.echo",
         "title": "Echo arguments"
+      },
+
+      {
+        "command": "hello-vs-ext.redirect",
+        "title": "Redirect to vscode"
       }
     ],
     "configuration": [
