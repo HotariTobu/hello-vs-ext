@@ -1,9 +1,10 @@
 {
-  "publisher": "hoteri",
+  "publisher": "hotari",
   "name": "hello-vs-ext",
   "displayName": "Hello-VS-Ext",
   "description": "My first vscode extension",
   "version": "0.0.2",
+  "repository": "https://github.com/HotariTobu/hello-vs-ext",
   "engines": {
     "vscode": "^1.81.0"
   },
