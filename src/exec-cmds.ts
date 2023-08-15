@@ -14,6 +14,7 @@ export default (context: vscode.ExtensionContext) => {
     }))
 
     context.subscriptions.push(vscode.commands.registerCommand('hello-vs-ext.echo', async (...args) => {
+        vscode.window.showInformationMessage(JSON.stringify(args))
         console.log(...args)
     }))
 }
